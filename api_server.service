@@ -1,0 +1,14 @@
+[Unit]
+Description=Flask API for minecraft service control
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/minecraft/api_server.py
+WorkingDirectory=/home/minecraft
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=minecraft
+
+[Install]
+WantedBy=multi-user.target
